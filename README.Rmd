@@ -13,7 +13,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# NewPackage
+# amR: an R package suite to predict antimicrobial resistance in bacterial pathogens
 
 <!-- badges: start -->
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
@@ -91,4 +91,4 @@ In that case, don't forget to commit and push the resulting figure files, so the
 
 ## Code of Conduct
   
-  Please note that the NewPackage project is released with a [Contributor Code of Conduct](https://contributor-covenant.org/version/2/1/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms.
+Please note that the amR project is released with a [Contributor Code of Conduct](https://contributor-covenant.org/version/2/1/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms.

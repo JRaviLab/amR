@@ -1,6 +1,6 @@
 # BSD 3-clause License
 
-Copyright (c) 2024 NewPackage authors
+Copyright (c) 2026 JRaviLab
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without

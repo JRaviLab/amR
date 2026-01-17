@@ -1,21 +1,40 @@
-Package: NewPackage
-Title: What the Package Does (One Line, Title Case)
+Package: amR
+Title: amR, an R package suite to predict AMR in bacterial pathogens (amRdata, amRml, amRshiny)
 Version: 0.0.0.9000
-Authors@R: 
-    person("David", "Mayer", , "david.mayer@cuanschutz.edu", role = c("aut", "cre"))
+Authors@R: c(
+    person("Janani", "Ravi", , "janani.ravi@cuanschutz.edu", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0001-7443-925X")),
+    person("Evan", "Brenner", , "evan.brenner@cuanschutz.edu", role = "ctb"),
+    person("Abhirupa", "Ghosh", , "abhirupa.ghosh@cuanschutz.edu", role = "ctb"),
+    person("Ethan", "Wolfe", , "ethan.wolfe@cuanschutz.edu", role = "ctb"),
+    person("Emily", "Boyer", , "emily.boyer@cuanschutz.edu", role = "ctb"),
+    person("Charmie", "Vang", , "charmie.vang@cuanschutz.edu", role = "ctb")
+    person("Raymond", "Lesiyon", , "raymond.lesiyon@cuanschutz.edu", role = "ctb"),
+    person("David", "Mayer", , "david.mayer@cuanschutz.edu", role = "ctb"),
+    )
 Description: What the package does (one paragraph).
-License: MIT + file LICENSE
+License: BSD_3_clause + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
+Depends:
+    R (>= 4.1.0)
 Suggests: 
     knitr,
     rmarkdown,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
-Encoding: UTF-8
-Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.2
-URL: https://github.com/JRaviLab/NewPackage
-BugReports: https://github.com/JRaviLab/NewPackage/issues
+URL: https://github.com/JRaviLab/amR
+BugReports: https://github.com/JRaviLab/amR/issues
 Imports: 
     glue,
     rlang
+biocViews:
+    AMR,
+    MicrobialGenomics,
+    MachineLearning,
+    Pathogen,
+    Dashboard,
+    Visualization
 VignetteBuilder: knitr

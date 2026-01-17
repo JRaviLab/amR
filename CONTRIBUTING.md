@@ -30,7 +30,7 @@ See our guide on [how to create a great issue](https://code-review.tidyverse.org
 
 - If you are outside our group and the repo is public, please fork this repo using:
   ```
-  usethis::create_from_github("JRaviLab/REPONAME", fork = TRUE)
+  usethis::create_from_github("JRaviLab/amR", fork = TRUE)
   ```
 - Install BiocManager from Bioconductor:
 
