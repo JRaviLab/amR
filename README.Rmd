@@ -103,6 +103,9 @@ amR: An R package suite for antimicrobial resistance prediction in bacterial pat
 https://github.com/JRaviLab/amR
 ```
 
+Looking for a cool application of this amR prediction framework? Check out our recent work on predicting AMR in ESKAPE pathogens: [Ghosh^, Brenner^, Vang^, Wolfe^, _et al.,_ _bioRxiv_ 2025](https://doi.org/10.1101/2025.07.03.663053).
+
+
 ## Contributing
 
 We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.

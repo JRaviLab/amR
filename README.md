@@ -1,102 +1,118 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# NewPackage
+# amR: an R package suite for antimicrobial resistance prediction
 
 <!-- badges: start -->
 
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
-[![CRAN
-status](https://www.r-pkg.org/badges/version/NewPackage)](https://CRAN.R-project.org/package=NewPackage)
-[![R-CMD-check](https://github.com/JRaviLab/NewPackage/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/JRaviLab/NewPackage/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
-The goal of NewPackage is to … \< *your awesome package description
-here!* \>
+**amR** is a metapackage that provides a single installation point for
+the amR suite of packages for antimicrobial resistance (AMR) prediction
+in bacterial pathogens.
 
-## GitHub Setup
+## The amR suite
 
-### Repository
+The amR suite consists of three packages that work together:
 
-Initial Repository Configuration:
-
-- Enable Git: `usethis::use_git()`
-- Configure Remote:
-  `usethis::use_github(organisation = "JRaviLab", private = TRUE, protocol = "https")`
-- Contributor Code of Conduct:
-  `usethis::use_code_of_conduct(contact = "janani.ravi@cuanschutz.edu")`
-
-### GitHub Actions
-
-These functions will enable common package development GitHub Actions is
-desired:
-
-- R CMD Check (multiplatform):
-  `usethis::use_github_action("check_standard")`
-- Build Pkgdown: `use_github_action("pkgdown")`
-- lint code: `use_github_action("lint")`
-- style code: `use_github_action("style")`
-
-Example GitHub Actions workflows have been incorporated into this
-template. Modify workflows in `.github/workflows/` or delete if these
-are not required.
-
-## Development
-
-- new function: `usethis::use_r("hello")`
-- add package dependency: `usethis::use_package("rlang")`
-- render documentation/update NAMESPACE: `devtools::document()`
-- load changes without install: `devtools::load_all()`
-- Local R CMD Check: `devtools::check()`
+| Package | Description | Repository |
+|----|----|----|
+| **amRdata** | Data curation and feature extraction from bacterial genomes | [JRaviLab/amR_data](https://github.com/JRaviLab/amR_data) |
+| **amRml** | Machine learning models for AMR prediction | [JRaviLab/amR_ml](https://github.com/JRaviLab/amR_ml) |
+| **amRshiny** | Interactive dashboard for exploring results | [JRaviLab/amR_shiny](https://github.com/JRaviLab/amR_shiny) |
 
 ## Installation
 
-You can install the development version of NewPackage like so:
+### Install the entire suite
 
 ``` r
-# GitHub
-devtools::install_github("JRaviLab/NewPackage", auth_token = "<PersonalAccessToken>")
-# If Bioconductor Dependencies
-BiocManager::install("JRaviLab/NewPackage", auth_token = "<PersonalAccessToken>")
+# Install amR metapackage
+if (!requireNamespace("remotes", quietly = TRUE))
+    install.packages("remotes")
+
+remotes::install_github("JRaviLab/amR")
+
+# Then install all packages in the suite
+library(amR)
+installAMR()
 ```
 
-## Example
+### Install individual packages
 
-This is a basic example which shows you how to solve a common problem:
+You can also install packages individually:
 
 ``` r
-library(NewPackage)
-## basic example code
+remotes::install_github("JRaviLab/amR_data")
+remotes::install_github("JRaviLab/amR_ml")
+remotes::install_github("JRaviLab/amR_shiny")
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
+## Quick start
 
 ``` r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
+# Load all packages
+library(amRdata)
+library(amRml)
+library(amRshiny)
+
+# 1. Prepare data with amRdata
+# features <- prepareFeatures(...)
+
+# 2. Train ML models with amRml
+# results <- runMLPipeline(...)
+
+# 3. Explore results with amRshiny
+# launchDashboard(...)
 ```
 
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date. `devtools::build_readme()` is handy for this.
+## Workflow overview
 
-You can also embed plots, for example:
+    ┌─────────────┐     ┌─────────────┐     ┌─────────────┐
+    │  amRdata    │ --> │   amRml     │ --> │  amRshiny   │
+    │             │     │             │     │             │
+    │ - Genomes   │     │ - Train LR  │     │ - Dashboard │
+    │ - Features  │     │ - Evaluate  │     │ - Plots     │
+    │ - Metadata  │     │ - Top feats │     │ - Export    │
+    └─────────────┘     └─────────────┘     └─────────────┘
 
-<img src="man/figures/README-pressure-1.png" width="100%" />
+## Documentation
 
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub and CRAN.
+- [amRdata documentation](https://jravilab.github.io/amR_data)
+- [amRml documentation](https://jravilab.github.io/amR_ml)
+- [amRshiny documentation](https://jravilab.github.io/amR_shiny)
+
+## Citation
+
+If you use the amR suite in your research, please cite:
+
+    Brenner EP^, Ghosh A^, Wolfe EP, Boyer EA, Vang CK, Lesiyon RL, Mayer DA, Ravi J. (2026).
+    amR: An R package suite for antimicrobial resistance prediction in bacterial pathogens.
+    https://github.com/JRaviLab/amR
+
+Looking for a cool application of this amR prediction framework? Check
+out our recent work on predicting AMR in ESKAPE pathogens: [Ghosh^,
+Brenner^, Vang^, Wolfe^, *et al.,* *bioRxiv*
+2025](https://doi.org/10.1101/2025.07.03.663053).
+
+## Contributing
+
+We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md)
+for guidelines.
+
+## License
+
+BSD 3-Clause License. See [LICENSE](LICENSE) for details.
+
+## Contact
+
+**Corresponding author**: Janani Ravi (<janani.ravi@cuanschutz.edu>)
+
+**Lab website**: <https://jravilab.github.io>
 
 ## Code of Conduct
 
-Please note that the NewPackage project is released with a [Contributor
-Code of
+Please note that amR is released with a [Contributor Code of
 Conduct](https://contributor-covenant.org/version/2/1/CODE_OF_CONDUCT.html).
 By contributing to this project, you agree to abide by its terms.
