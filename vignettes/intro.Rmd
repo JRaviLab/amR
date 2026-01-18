@@ -1,8 +1,8 @@
 ---
-title: "intro"
+title: "Introduction to the amR package suite"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{intro}
+  %\VignetteIndexEntry{Introduction to the amR package suite}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -14,7 +14,56 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r setup}
-library(NewPackage)
-hello()
+## Overview
+The amR package suite provides tools for antimicrobial resistance (AMR) prediction in bacterial pathogens. It consists of three packages:
+
+- **amRdata**: Data curation and feature extraction from bacterial genomes
+- **amRml**: Machine learning models for AMR prediction
+- **amRshiny**: Interactive dashboard for exploring results
+
+## Installation
+
+To install all packages in the amR suite:
+
+```{r install, eval = FALSE}
+library(amR)
+installAMR()
 ```
+
+This will install amRdata, amRml, and amRshiny from GitHub.
+
+### Installing specific packages
+
+You can also install specific packages:
+
+```{r install-specific, eval = FALSE}
+# Install only the ML package
+installAMR(packages = "ml")
+
+# Install data and ML packages
+installAMR(packages = c("data", "ml"))
+```
+
+### Installation options
+
+The `installAMR()` function supports several options:
+
+```{r install-options, eval = FALSE}
+# Force reinstall
+installAMR(force = TRUE)
+
+# Quiet installation
+installAMR(quiet = TRUE)
+
+# Control dependency upgrades
+installAMR(upgrade = "never")
+```
+
+## Workflow
+
+A typical amR workflow involves:
+1. Preparing genomic feature data with **amRdata**
+2. Training ML models with **amRml**
+3. Exploring results with **amRshiny**
+
+See the individual package vignettes for detailed usage instructions.

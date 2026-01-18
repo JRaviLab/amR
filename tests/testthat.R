@@ -7,6 +7,6 @@
 # * https://testthat.r-lib.org/articles/special-files.html
 
 library(testthat)
-library(NewPackage)
+library(amR)
 
-test_check("NewPackage")
+test_check("amR")

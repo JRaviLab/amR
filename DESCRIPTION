@@ -8,11 +8,11 @@ Authors@R: c(
     person("Abhirupa", "Ghosh", , "abhirupa.ghosh@cuanschutz.edu", role = "ctb"),
     person("Ethan", "Wolfe", , "ethan.wolfe@cuanschutz.edu", role = "ctb"),
     person("Emily", "Boyer", , "emily.boyer@cuanschutz.edu", role = "ctb"),
-    person("Charmie", "Vang", , "charmie.vang@cuanschutz.edu", role = "ctb")
+    person("Charmie", "Vang", , "charmie.vang@cuanschutz.edu", role = "ctb"),
     person("Raymond", "Lesiyon", , "raymond.lesiyon@cuanschutz.edu", role = "ctb"),
-    person("David", "Mayer", , "david.mayer@cuanschutz.edu", role = "ctb"),
+    person("David", "Mayer", , "david.mayer@cuanschutz.edu", role = "ctb")
     )
-Description: What the package does (one paragraph).
+Description: amR is a metapackage aka package suite that lets users install the 3 packages, amRdata, amRml, and amRshiny with a single install function.
 License: BSD_3_clause + file LICENSE
 Encoding: UTF-8
 LazyData: true
@@ -28,8 +28,7 @@ Config/testthat/edition: 3
 URL: https://github.com/JRaviLab/amR
 BugReports: https://github.com/JRaviLab/amR/issues
 Imports: 
-    glue,
-    rlang
+    devtools
 biocViews:
     AMR,
     MicrobialGenomics,
