@@ -15,11 +15,10 @@ Authors@R: c(
 Description: amR is a metapackage aka package suite that lets users install the 3 packages, amRdata, amRml, and amRshiny with a single install function.
 License: BSD_3_clause + file LICENSE
 Encoding: UTF-8
-LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.3
 Depends:
-    R (>= 4.1.0)
+    R (>= 4.5.0)
 Suggests: 
     knitr,
     rmarkdown,
