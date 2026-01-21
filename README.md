@@ -19,9 +19,9 @@ The amR suite consists of three packages that work together:
 
 | Package | Description | Repository |
 |----|----|----|
-| **amRdata** | Data curation and feature extraction from bacterial genomes | [JRaviLab/amR_data](https://github.com/JRaviLab/amR_data) |
-| **amRml** | Machine learning models for AMR prediction | [JRaviLab/amR_ml](https://github.com/JRaviLab/amR_ml) |
-| **amRshiny** | Interactive dashboard for exploring results | [JRaviLab/amR_shiny](https://github.com/JRaviLab/amR_shiny) |
+| **amRdata** | Data curation and feature extraction from bacterial genomes | [JRaviLab/amRdata](https://github.com/JRaviLab/amRdata) |
+| **amRml** | Machine learning models for AMR prediction | [JRaviLab/amRml](https://github.com/JRaviLab/amRml) |
+| **amRshiny** | Interactive dashboard for exploring results | [JRaviLab/amRshiny](https://github.com/JRaviLab/amRshiny) |
 
 ## Installation
 
@@ -44,9 +44,9 @@ installAMR()
 You can also install packages individually:
 
 ``` r
-remotes::install_github("JRaviLab/amR_data")
-remotes::install_github("JRaviLab/amR_ml")
-remotes::install_github("JRaviLab/amR_shiny")
+remotes::install_github("JRaviLab/amRdata")
+remotes::install_github("JRaviLab/amRml")
+remotes::install_github("JRaviLab/amRshiny")
 ```
 
 ## Quick start
@@ -79,9 +79,9 @@ library(amRshiny)
 
 ## Documentation
 
-- [amRdata documentation](https://jravilab.github.io/amR_data)
-- [amRml documentation](https://jravilab.github.io/amR_ml)
-- [amRshiny documentation](https://jravilab.github.io/amR_shiny)
+- [amRdata documentation](https://jravilab.github.io/amRdata)
+- [amRml documentation](https://jravilab.github.io/amRml)
+- [amRshiny documentation](https://jravilab.github.io/amRshiny)
 
 ## Citation
 

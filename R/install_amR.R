@@ -44,9 +44,9 @@ installAMR <- function(packages = c("data", "ml", "shiny"),
   # Map short names to full repo paths
 
   repo_map <- c(
-    data = "JRaviLab/amR_data",
-    ml = "JRaviLab/amR_ml",
-    shiny = "JRaviLab/amR_shiny"
+    data = "JRaviLab/amRdata",
+    ml = "JRaviLab/amRml",
+    shiny = "JRaviLab/amRshiny"
   )
 
   # Install each requested package
