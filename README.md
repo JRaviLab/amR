@@ -13,6 +13,8 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 the amR suite of packages for antimicrobial resistance (AMR) prediction
 in bacterial pathogens.
 
+<img src="man/figures/README-amR.png" width="40%" />
+
 ## The amR suite
 
 The amR suite consists of three packages that work together:
