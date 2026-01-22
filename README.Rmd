@@ -21,7 +21,9 @@ knitr::opts_chunk$set(
 
 **amR** is a metapackage that provides a single installation point for the amR suite of packages for antimicrobial resistance (AMR) prediction in bacterial pathogens.
 
-<img src="man/figures/README-amR.png" width="40%" />
+```{r, echo=FALSE, fig.align='center', out.width='60%'}
+knitr::include_graphics("man/figures/README-amR.png")
+```
 
 ## The amR suite
 
