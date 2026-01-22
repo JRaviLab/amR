@@ -12,8 +12,7 @@ test_that("installAMR validates package arguments", {
   )
 })
 
-test_that("installAMR function exists and has correct signature",
-{
+test_that("installAMR function exists and has correct signature", {
   expect_true(exists("installAMR"))
   expect_true(is.function(installAMR))
 
@@ -29,7 +28,7 @@ test_that("installAMR has correct default arguments", {
   args <- formals(installAMR)
 
   # Check default values
-expect_equal(eval(args$packages), c("data", "ml", "shiny"))
+  expect_equal(eval(args$packages), c("data", "ml", "shiny"))
   expect_false(eval(args$force))
   expect_equal(eval(args$upgrade), "default")
   expect_false(eval(args$quiet))
