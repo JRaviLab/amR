@@ -19,7 +19,7 @@ The amR package suite provides tools for antimicrobial resistance (AMR) predicti
 
 - **amRdata**: Data curation and feature extraction from bacterial genomes
 - **amRml**: Machine learning models for AMR prediction
-- **amRshiny**: Interactive dashboard for exploring results
+- **amRviz**: Interactive dashboard for exploring results
 
 ## Installation
 
@@ -30,7 +30,7 @@ library(amR)
 installAMR()
 ```
 
-This will install amRdata, amRml, and amRshiny from GitHub.
+This will install amRdata, amRml, and amRviz from GitHub.
 
 ### Installing specific packages
 
@@ -64,6 +64,6 @@ installAMR(upgrade = "never")
 A typical amR workflow involves:
 1. Preparing genomic feature data with **amRdata**
 2. Training ML models with **amRml**
-3. Exploring results with **amRshiny**
+3. Exploring results with **amRviz**
 
 See the individual package vignettes for detailed usage instructions.
