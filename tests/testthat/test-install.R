@@ -2,13 +2,13 @@ test_that("installAMR validates package arguments", {
   # Valid packages should not error
 
   expect_no_error(
-    match.arg(c("data", "ml"), c("data", "ml", "shiny"), several.ok = TRUE)
+    match.arg(c("data", "ml"), c("data", "ml", "viz"), several.ok = TRUE)
   )
 
   # Invalid package should error
 
   expect_error(
-    match.arg("invalid", c("data", "ml", "shiny"), several.ok = TRUE)
+    match.arg("invalid", c("data", "ml", "viz"), several.ok = TRUE)
   )
 })
 
@@ -28,7 +28,7 @@ test_that("installAMR has correct default arguments", {
   args <- formals(installAMR)
 
   # Check default values
-  expect_equal(eval(args$packages), c("data", "ml", "shiny"))
+  expect_equal(eval(args$packages), c("data", "ml", "viz"))
   expect_false(eval(args$force))
   expect_equal(eval(args$upgrade), "default")
   expect_false(eval(args$quiet))

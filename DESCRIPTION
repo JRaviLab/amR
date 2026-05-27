@@ -1,5 +1,5 @@
 Package: amR
-Title: amR, an R package suite to predict AMR in bacterial pathogens (amRdata, amRml, amRshiny)
+Title: amR, an R package suite to predict AMR in bacterial pathogens (amRdata, amRml, amRviz)
 Version: 0.0.0.9000
 Authors@R: c(
     person("Janani", "Ravi", , "janani.ravi@cuanschutz.edu", role = c("aut", "cre"),
@@ -12,7 +12,7 @@ Authors@R: c(
     person("Raymond", "Lesiyon", , "raymond.lesiyon@cuanschutz.edu", role = "ctb"),
     person("David", "Mayer", , "david.mayer@cuanschutz.edu", role = "ctb")
     )
-Description: amR is a metapackage aka package suite that lets users install the 3 packages, amRdata, amRml, and amRshiny with a single install function.
+Description: amR is a metapackage aka package suite that lets users install the 3 packages, amRdata, amRml, and amRviz with a single install function.
 License: BSD_3_clause + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)

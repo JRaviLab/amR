@@ -13,7 +13,7 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 the amR suite of packages for antimicrobial resistance (AMR) prediction
 in bacterial pathogens.
 
-<img src="man/figures/README-amR.png" width="60%" style="display: block; margin: auto;" />
+<img src="man/figures/README-amR.png" alt="" width="60%" style="display: block; margin: auto;" />
 
 ## The amR suite
 
@@ -23,7 +23,7 @@ The amR suite consists of three packages that work together:
 |----|----|----|
 | **amRdata** | Data curation and feature extraction from bacterial genomes | [JRaviLab/amRdata](https://github.com/JRaviLab/amRdata) |
 | **amRml** | Machine learning models for AMR prediction | [JRaviLab/amRml](https://github.com/JRaviLab/amRml) |
-| **amRshiny** | Interactive dashboard for exploring results | [JRaviLab/amRshiny](https://github.com/JRaviLab/amRshiny) |
+| **amRviz** | Interactive dashboard for exploring results | [JRaviLab/amRviz](https://github.com/JRaviLab/amRviz) |
 
 ## Installation
 
@@ -48,7 +48,7 @@ You can also install packages individually:
 ``` r
 remotes::install_github("JRaviLab/amRdata")
 remotes::install_github("JRaviLab/amRml")
-remotes::install_github("JRaviLab/amRshiny")
+remotes::install_github("JRaviLab/amRviz")
 ```
 
 ## Quick start
@@ -57,7 +57,7 @@ remotes::install_github("JRaviLab/amRshiny")
 # Load all packages
 library(amRdata)
 library(amRml)
-library(amRshiny)
+library(amRviz)
 
 # 1. Prepare data with amRdata
 # features <- prepareFeatures(...)
@@ -65,14 +65,14 @@ library(amRshiny)
 # 2. Train ML models with amRml
 # results <- runMLPipeline(...)
 
-# 3. Explore results with amRshiny
+# 3. Explore results with amRviz
 # launchDashboard(...)
 ```
 
 ## Workflow overview
 
     ┌─────────────┐     ┌─────────────┐     ┌─────────────┐
-    │  amRdata    │ --> │   amRml     │ --> │  amRshiny   │
+    │  amRdata    │ --> │   amRml     │ --> │  amRviz   │
     │             │     │             │     │             │
     │ - Genomes   │     │ - Train LR  │     │ - Dashboard │
     │ - Features  │     │ - Evaluate  │     │ - Plots     │
@@ -83,7 +83,7 @@ library(amRshiny)
 
 - [amRdata documentation](https://jravilab.github.io/amRdata)
 - [amRml documentation](https://jravilab.github.io/amRml)
-- [amRshiny documentation](https://jravilab.github.io/amRshiny)
+- [amRviz documentation](https://jravilab.github.io/amRviz)
 
 ## Citation
 

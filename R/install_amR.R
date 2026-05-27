@@ -1,10 +1,10 @@
 #' Install amR package suite
 #'
 #' Installs all packages in the amR suite for antimicrobial resistance
-#' prediction: amRdata, amRml, and amRshiny.
+#' prediction: amRdata, amRml, and amRviz.
 #'
 #' @param packages Character vector specifying which packages to install.
-#'   Options are "data", "ml", and "shiny". Default installs all three.
+#'   Options are "data", "ml", and "viz". Default installs all three.
 #' @param force Logical. If TRUE, forces reinstallation even if packages
 #'   are already installed. Default is FALSE.
 #' @param upgrade Character. Controls whether to upgrade dependencies.
@@ -31,13 +31,13 @@
 #' # Install specific packages quietly
 #' installAMR(packages = c("data", "ml"), quiet = TRUE)
 #' }
-installAMR <- function(packages = c("data", "ml", "shiny"),
+installAMR <- function(packages = c("data", "ml", "viz"),
                        force = FALSE,
                        upgrade = "default",
                        quiet = FALSE) {
   # Validate packages argument
 
-  valid_packages <- c("data", "ml", "shiny")
+  valid_packages <- c("data", "ml", "viz")
   packages <- match.arg(packages, valid_packages, several.ok = TRUE)
 
 
@@ -46,7 +46,7 @@ installAMR <- function(packages = c("data", "ml", "shiny"),
   repo_map <- c(
     data = "JRaviLab/amRdata",
     ml = "JRaviLab/amRml",
-    shiny = "JRaviLab/amRshiny"
+    viz = "JRaviLab/amRviz"
   )
 
   # Install each requested package

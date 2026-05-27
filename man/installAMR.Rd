@@ -5,7 +5,7 @@
 \title{Install amR package suite}
 \usage{
 installAMR(
-  packages = c("data", "ml", "shiny"),
+  packages = c("data", "ml", "viz"),
   force = FALSE,
   upgrade = "default",
   quiet = FALSE
@@ -13,7 +13,7 @@ installAMR(
 }
 \arguments{
 \item{packages}{Character vector specifying which packages to install.
-Options are "data", "ml", and "shiny". Default installs all three.}
+Options are "data", "ml", and "viz". Default installs all three.}
 
 \item{force}{Logical. If TRUE, forces reinstallation even if packages
 are already installed. Default is FALSE.}
@@ -29,7 +29,7 @@ Invisible NULL. Called for side effects (package installation).
 }
 \description{
 Installs all packages in the amR suite for antimicrobial resistance
-prediction: amRdata, amRml, and amRshiny.
+prediction: amRdata, amRml, and amRviz.
 }
 \examples{
 \dontrun{
