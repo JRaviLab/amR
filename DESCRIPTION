@@ -8,6 +8,8 @@ Authors@R: c(
     person("Abhirupa", "Ghosh", , "abhirupa.ghosh@cuanschutz.edu", role = "ctb"),
     person("Ethan", "Wolfe", , "ethan.wolfe@cuanschutz.edu", role = "ctb"),
     person("Emily", "Boyer", , "emily.boyer@cuanschutz.edu", role = "ctb"),
+    person("Alexander", "McKim", , "alexander.mckim@cuanschutz.edu", role = "ctb",
+           comment = c(ORCID = "0000-0002-7802-7591")),
     person("Charmie", "Vang", , "charmie.vang@cuanschutz.edu", role = "ctb"),
     person("Raymond", "Lesiyon", , "raymond.lesiyon@cuanschutz.edu", role = "ctb"),
     person("David", "Mayer", , "david.mayer@cuanschutz.edu", role = "ctb")
