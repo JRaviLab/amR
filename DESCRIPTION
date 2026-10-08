@@ -18,7 +18,6 @@ Description: amR is a metapackage aka package suite that lets users install the 
 License: BSD_3_clause + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.3
 Depends:
     R (>= 4.5.0)
 Suggests: 
@@ -40,3 +39,4 @@ biocViews:
     Dashboard,
     Visualization
 VignetteBuilder: knitr
+Config/roxygen2/version: 8.1.0
