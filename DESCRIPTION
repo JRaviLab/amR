@@ -23,6 +23,8 @@ Depends:
     R (>= 4.5.0)
 Suggests: 
     knitr,
+    mockery,
+    pak,
     rmarkdown,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3

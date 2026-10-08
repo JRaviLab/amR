@@ -57,6 +57,15 @@ installAMR(quiet = TRUE)
 
 # Control dependency upgrades
 installAMR(upgrade = "never")
+
+# Use pak instead of devtools (requires the pak package)
+installAMR(method = "pak")
+
+# Install from a specific branch, tag, or commit
+installAMR(branch = "dev")
+
+# Different branch per package; others use their default branch
+installAMR(branch = c(ml = "dev", viz = "feature-x"))
 ```
 
 ## Workflow

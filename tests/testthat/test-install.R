@@ -22,6 +22,8 @@ test_that("installAMR function exists and has correct signature", {
   expect_true("force" %in% names(args))
   expect_true("upgrade" %in% names(args))
   expect_true("quiet" %in% names(args))
+  expect_true("method" %in% names(args))
+  expect_true("branch" %in% names(args))
 })
 
 test_that("installAMR has correct default arguments", {
@@ -32,4 +34,40 @@ test_that("installAMR has correct default arguments", {
   expect_false(eval(args$force))
   expect_equal(eval(args$upgrade), "default")
   expect_false(eval(args$quiet))
+})
+
+test_that("installAMR defaults to devtools and the default branch", {
+  args <- formals(installAMR)
+
+  expect_equal(eval(args$method), c("devtools", "pak"))
+  expect_null(args$branch)
+})
+
+test_that("installAMR validates method and branch", {
+  expect_error(installAMR(method = "invalid"))
+  expect_error(installAMR(branch = c("a", "b")), "single value or a named")
+  expect_error(installAMR(branch = c(foo = "dev")), "Unknown package")
+  expect_error(installAMR(branch = 1), "character")
+})
+
+test_that("installAMR passes branch to devtools::install_github", {
+  skip_if_not_installed("mockery")
+  stub <- mockery::mock(NULL, NULL)
+  mockery::stub(installAMR, "devtools::install_github", stub)
+
+  installAMR(packages = c("data", "ml"), branch = c(ml = "dev"), quiet = TRUE)
+
+  expect_null(mockery::mock_args(stub)[[1]]$ref)
+  expect_equal(mockery::mock_args(stub)[[2]]$ref, "dev")
+})
+
+test_that("installAMR passes branch to pak::pkg_install", {
+  skip_if_not_installed("mockery")
+  skip_if_not_installed("pak")
+  stub <- mockery::mock(NULL)
+  mockery::stub(installAMR, "pak::pkg_install", stub)
+
+  installAMR(packages = "ml", method = "pak", branch = "dev", quiet = TRUE)
+
+  expect_equal(mockery::mock_args(stub)[[1]][[1]], "JRaviLab/amRml@dev")
 })

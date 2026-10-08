@@ -8,7 +8,9 @@ installAMR(
   packages = c("data", "ml", "viz"),
   force = FALSE,
   upgrade = "default",
-  quiet = FALSE
+  quiet = FALSE,
+  method = c("devtools", "pak"),
+  branch = NULL
 )
 }
 \arguments{
@@ -23,6 +25,19 @@ Options: "default", "ask", "always", "never". Default is "default".}
 
 \item{quiet}{Logical. If TRUE, suppresses installation messages.
 Default is FALSE.}
+
+\item{method}{Character. Installer backend: "devtools" (default, uses
+\code{devtools::install_github()}) or "pak" (uses \code{pak::pkg_install()};
+requires the pak package). With "pak", \code{force = TRUE} is translated to
+\code{upgrade = TRUE}, since pak has no force option; \code{upgrade} is TRUE only
+for "always" (otherwise dependencies are not upgraded), and \code{quiet} has
+no effect on pak's own output.}
+
+\item{branch}{Character. Git branch, tag, or commit to install from.
+Either a single unnamed value applied to every requested package, or a
+named vector keyed by package (e.g. \code{c(ml = "dev", viz = "main")});
+packages not named use the repository's default branch. Default is
+NULL (default branch).}
 }
 \value{
 Invisible NULL. Called for side effects (package installation).
@@ -44,5 +59,14 @@ installAMR(force = TRUE)
 
 # Install specific packages quietly
 installAMR(packages = c("data", "ml"), quiet = TRUE)
+
+# Install using pak instead of devtools
+installAMR(method = "pak")
+
+# Install every package from the "dev" branch
+installAMR(branch = "dev")
+
+# Install amRml from "dev" and the rest from their default branches
+installAMR(branch = c(ml = "dev"))
 }
 }

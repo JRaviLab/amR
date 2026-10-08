@@ -51,6 +51,26 @@ remotes::install_github("JRaviLab/amRml")
 remotes::install_github("JRaviLab/amRviz")
 ```
 
+### Alternative: install with pak
+
+``` r
+installAMR(method = "pak")
+```
+
+### Install from a specific branch
+
+``` r
+# Same branch (or tag/commit) for every package
+installAMR(branch = "dev")
+
+# Per-package branches; others use their default branch
+installAMR(branch = c(ml = "dev"))
+
+# The metapackage itself, via pak
+pak::pkg_install("JRaviLab/amR@dev")
+```
+
+
 ## Quick start
 
 ``` r
