@@ -90,13 +90,15 @@ library(amRml)
 library(amRviz)
 
 # 1. Prepare data with amRdata
-# features <- prepareFeatures(...)
+# prepareGenomes("Shigella sonnei")
+# runDataProcessing()
 
 # 2. Train ML models with amRml
-# results <- runMLPipeline(...)
+# runModelingWorkflow()
+# rescoreFeatures()
 
 # 3. Explore results with amRviz
-# launchDashboard(...)
+# launchAMRDashboard(...)
 ```
 
 ## Workflow overview
